@@ -1,0 +1,3 @@
+--command="cabal repl learn-haskell"
+--restart=learn-haskell.cabal
+--allow-eval

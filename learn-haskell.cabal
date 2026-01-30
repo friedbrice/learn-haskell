@@ -1,0 +1,95 @@
+cabal-version: 3.0
+-- The cabal-version field refers to the version of the .cabal specification.
+-- This comment comes after the cabal-version key because the cabal-version key
+-- must be the first non-empty line in the file.
+
+-- The name of the package.
+name: learn-haskell
+
+-- The package version.
+-- See the Haskell package versioning policy (PVP) for standards
+-- guiding when and how versions should be incremented.
+-- https://pvp.haskell.org
+--        +-+------- breaking API changes
+--        | | +----- non-breaking API additions
+--        | | | +--- code changes with no API change
+version: 0.1.0.0
+
+-- The license under which the package is released.
+license: BSD-3-Clause
+
+-- The file containing the license text.
+license-file: LICENSE
+
+-- The package author(s).
+author: Daniel Brice
+
+-- An email address to which users can send suggestions, bug reports, and patches.
+maintainer: danielbrice@gmail.com
+
+-- The build type (almost always 'Simple').
+build-type: Simple
+
+-- A common stanza that can be imported in build components.
+common options
+  -- GHC command line flags
+  ghc-options: -Wall
+
+  -- Base language which the package is written in.
+  default-language: Haskell2010
+
+  -- Other library packages from which modules are imported.
+  build-depends:
+    base ^>=4.19
+
+-- The library build component.
+library
+  -- Import common stanzas.
+  import: options
+
+  build-depends:
+    async,
+    bytestring,
+    containers,
+    cryptonite,
+    directory,
+    generic-deriving,
+    hashable,
+    memory,
+    mwc-random,
+    process,
+    safe-exceptions,
+    signal,
+    stm,
+    time,
+    utf8-string,
+
+  -- Directories containing source files.
+  hs-source-dirs: src
+
+  -- Modules exported by the library.
+  -- When you create a file, add it here.
+  exposed-modules:
+    Json
+    Phrasebook.CommonTypes
+    Phrasebook.HelloWorld
+    Phrasebook.Variables
+    Scheme
+
+-- An executable build component.
+-- Use `cabal run learn-haskell:exe:json <args>` to run this executable.
+executable json
+  import: options
+  build-depends: learn-haskell
+  hs-source-dirs: json
+
+  -- .hs file containing the Main module.
+  main-is: Main.hs
+
+-- Another executable build component.
+-- Use `cabal run learn-haskell:exe:scheme <args>` to run this executable.
+executable scheme
+  import: options
+  build-depends: learn-haskell
+  hs-source-dirs: scheme
+  main-is: Main.hs
