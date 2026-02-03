@@ -57,6 +57,9 @@ library
     hashable,
     memory,
     mwc-random,
+    mtl,
+    network,
+    parsec,
     process,
     safe-exceptions,
     signal,
@@ -71,8 +74,25 @@ library
   -- When you create a file, add it here.
   exposed-modules:
     Json
+    Phrasebook.Branching
     Phrasebook.CommonTypes
+    Phrasebook.CryptoHashing
+    Phrasebook.Dynamic
+    Phrasebook.EnumRanges
+    Phrasebook.FoldingLists
+    Phrasebook.ForLoops
+    Phrasebook.Functions
+    Phrasebook.Hashing
     Phrasebook.HelloWorld
+    Phrasebook.IfElse
+    Phrasebook.Invert
+    Phrasebook.Logging
+    Phrasebook.MomentsInTime
+    Phrasebook.Monitoring
+    Phrasebook.MutableReferences
+    Phrasebook.Timeouts
+    Phrasebook.Threads
+    Phrasebook.Transactions
     Phrasebook.Variables
     Scheme
 
@@ -92,4 +112,22 @@ executable scheme
   import: options
   build-depends: learn-haskell
   hs-source-dirs: scheme
+  main-is: Main.hs
+
+executable logging
+  import: options
+  build-depends: learn-haskell
+  hs-source-dirs: logging
+  main-is: Main.hs
+
+executable transactions
+  import: options
+  build-depends: learn-haskell
+  hs-source-dirs: transactions
+  main-is: Main.hs
+
+executable monitoring
+  import: options
+  build-depends: learn-haskell
+  hs-source-dirs: monitoring
   main-is: Main.hs

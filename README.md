@@ -58,6 +58,8 @@ Ghcid will recompile your files on every save.
 
 This project pulls together three learning resources.
 
+Before beginning, read `learn-haskell.cabal` to learn how to use cabal.
+
 Begin with the file `src/Json.hs`.
 
 Proceed to `src/Scheme.hs`.

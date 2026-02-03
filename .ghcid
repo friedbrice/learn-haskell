@@ -1,3 +1,4 @@
 --command="cabal repl learn-haskell"
 --restart=learn-haskell.cabal
 --allow-eval
+--outputfile="ghcid.txt"
